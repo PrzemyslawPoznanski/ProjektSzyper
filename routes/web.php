@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddGradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,10 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
  });
  //endlogout
+
+ //addgrades
+Route::view('add','add_grades');
+Route::post('add',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
 
 
 
