@@ -45,3 +45,7 @@ Route::view('session', 'session');
 Route::post('session', [App\Http\Controllers\SessionController::class, 'index']);
 Route::view('home_page_session', 'home_page_session');
 
+//Crud
+use App\Http\Controllers\UserController;
+Route::resource('users', UserController::class);
+
