@@ -67,7 +67,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Rola: {{$user = Auth::user()->role;}}</span>
     </a>
@@ -80,7 +80,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{$user = Auth::user()->name;}}
+          <a class="d-block">{{$user = Auth::user()->name;}}
           </a>
         </div>
       </div>
@@ -101,7 +101,7 @@
           </li>
    
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a onclick="load_content" class="nav-link">
               <i class="nav-icon fas fa-user-edit"></i>
               <p>
                 USER EDIT
@@ -117,7 +117,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="add_grades" class="nav-link">
               <i class="nav-icon fas fa-plus-square"></i>
               <p>
                 ADD GRADES
@@ -146,19 +146,13 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Tu będzie się wyświetlać nazwa podstrony</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-          </div><!-- /.col -->
-        </div><!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
-    @include('add_grades')
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

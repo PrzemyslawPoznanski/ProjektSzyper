@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddGradeController;
-
+use App\Http\Controllers\EditGradeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,8 +35,12 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
  //endlogout
 
  //addgrades
+Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index']);
+
 Route::view('add','add_grades');
 Route::post('add',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
+
+//edit grades
 
 
 
