@@ -110,7 +110,7 @@
             </a>
           </li>
             @endif
-            @if($user = Auth::user()->role=='Student' OR $user = Auth::user()->role=='Teacher')
+            @if($user = Auth::user()->role=='Admin' OR $user = Auth::user()->role=='Student' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="view_grades" class="nav-link">
               <i class="nav-icon fas fa-poll-h"></i>
@@ -120,7 +120,7 @@
             </a>
           </li>
           @endif
-          @if($user = Auth::user()->role== $user = Auth::user()->role=='Teacher')
+          @if($user = Auth::user()->role=='Admin' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="add_grades" class="nav-link">
               <i class="nav-icon fas fa-plus-square"></i>
@@ -130,7 +130,7 @@
             </a>
           </li>
           @endif
-          @if($user = Auth::user()->role=='Student' OR $user = Auth::user()->role=='Teacher')
+          @if($user = Auth::user()->role=='Admin' OR $user = Auth::user()->role=='Student' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa fa-history"></i>
