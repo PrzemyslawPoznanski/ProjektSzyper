@@ -37,7 +37,6 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
  //addgrades
 Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index']);
-
 Route::view('add_grade','add_grades');
 Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
 
@@ -50,6 +49,4 @@ Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables'
 
 //add user
 Route::view('add_user','add_user');
-Route::get('add_user',[App\Http\Controllers\AddUserController::class, 'index']);
-
-
+Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);
