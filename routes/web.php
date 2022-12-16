@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AddGradeController;
+use App\Http\Controllers\EditGradeController;
+use App\Http\Controllers\ViewGradeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,15 +35,18 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
  });
  //endlogout
 
+ //addgrades
+Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index']);
+Route::view('add_grade','add_grades')->middleware('can:isTeacher');
+Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
 
+//viewgrades
+Route::get('view_grades',[App\Http\Controllers\ViewGradesController::class, 'joinTables']);
 
-//file upload
-Route::view('file', 'upload');
-Route::post('FileController', [App\Http\Controllers\FileController::class, 'upload']);
+Route::view('view','view_grades');
+Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']);
+Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']);
 
-
-//session
-Route::view('session', 'session');
-Route::post('session', [App\Http\Controllers\SessionController::class, 'index']);
-Route::view('home_page_session', 'home_page_session');
-
+//add user
+Route::view('add_user','add_user')->middleware('can:isAdmin');
+Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);
