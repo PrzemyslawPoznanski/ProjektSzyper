@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddGradeController;
 use App\Http\Controllers\EditGradeController;
 use App\Http\Controllers\ViewGradeController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,15 +39,24 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
  //addgrades
 Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index']);
 Route::view('add_grade','add_grades');
-Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
+Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade']);
 
 //viewgrades
 Route::get('view_grades',[App\Http\Controllers\ViewGradesController::class, 'joinTables']);
 
 Route::view('view','view_grades');
-Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']); 
-Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']); 
+Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']);
+Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']);
 
 //add user
 Route::view('add_user','add_user');
 Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);
+
+//Crud
+Route::view('user_list','user_list');
+Route::get('user_list',[App\Http\Controllers\UserController::class, 'index']);
+
+Route::view('create_user','create_user');
+Route::get('create_user',[App\Http\Controllers\UserController::class, 'create']);
+
+Route::resource('users', UserController::class);

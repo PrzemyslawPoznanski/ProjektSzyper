@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit User</h2>
+                <h2>Add New User</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
@@ -28,22 +28,26 @@
         </div>
     @endif
 
-    <form action="{{ route('users.update',$user->id) }}" method="POST">
+    <form action="{{ route('users.store') }}" method="POST">
         @csrf
-        @method('PUT')
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="Name">
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Email:</strong>
-                    <textarea class="form-control" style="height:150px" name="email"
-                              placeholder="Email">{{ $user->email }}</textarea>
+                    <strong>password:</strong>
+                    <input type="text" name="password" class="form-control" placeholder="Password">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>email:</strong>
+                    <textarea class="form-control" style="height:150px" name="email" placeholder="Email"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

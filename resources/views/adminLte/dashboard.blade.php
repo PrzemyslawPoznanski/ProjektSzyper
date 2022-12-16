@@ -49,7 +49,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
 
-  
+
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -102,7 +102,7 @@
               @endif
               @if($user = Auth::user()->role=='admin' OR $user = Auth::user()->role=='teacher')
           <li class="nav-item">
-            <a href="edit_user" class="nav-link">
+            <a href="user_list" class="nav-link">
               <i class="nav-icon fas fa-user-edit"></i>
               <p>
                 USER EDIT
@@ -154,7 +154,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        
+
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -166,7 +166,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
