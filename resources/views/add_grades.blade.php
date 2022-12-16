@@ -8,7 +8,7 @@
 
 
 
-<form method="POST" action="add">
+<form method="POST" action="add_grade">
     @csrf
     @if($errors->any())
     @foreach ($errors->all() as $err)

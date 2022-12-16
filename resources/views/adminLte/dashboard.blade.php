@@ -90,7 +90,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
+               @if($user = Auth::user()->role=='Admin' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="add_user" class="nav-link">
               <i class="nav-icon fas fa fa-user-plus"></i>
@@ -99,7 +99,8 @@
               </p>
             </a>
           </li>
-   
+              @endif
+              @if($user = Auth::user()->role=='Admin' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="edit_user" class="nav-link">
               <i class="nav-icon fas fa-user-edit"></i>
@@ -108,14 +109,18 @@
               </p>
             </a>
           </li>
+            @endif
+            @if($user = Auth::user()->role=='Student' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="view_grades" class="nav-link">
               <i class="nav-icon fas fa-poll-h"></i>
               <p>
                 GRADES
               </p>
             </a>
           </li>
+          @endif
+          @if($user = Auth::user()->role== $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="add_grades" class="nav-link">
               <i class="nav-icon fas fa-plus-square"></i>
@@ -124,6 +129,8 @@
               </p>
             </a>
           </li>
+          @endif
+          @if($user = Auth::user()->role=='Student' OR $user = Auth::user()->role=='Teacher')
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa fa-history"></i>
@@ -132,6 +139,7 @@
               </p>
             </a>
           </li>
+          @endif
             </a>
           </li>
         </ul>
