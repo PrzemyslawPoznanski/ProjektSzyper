@@ -36,24 +36,11 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
  //addgrades
 Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index']);
-
 Route::view('add','add_grades');
-Route::post('add',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
+Route::post('add',[App\Http\Controllers\AddGradeController::class, 'addGrade']);
 
 //edit grades
 
 //add user
 Route::view('add_user','add_user');
-Route::get('add_user',[App\Http\Controllers\AddUserController::class, 'index']);
-
-
-//file upload
-Route::view('file', 'upload');
-Route::post('FileController', [App\Http\Controllers\FileController::class, 'upload']);
-
-
-//session
-Route::view('session', 'session');
-Route::post('session', [App\Http\Controllers\SessionController::class, 'index']);
-Route::view('home_page_session', 'home_page_session');
-
+Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);
