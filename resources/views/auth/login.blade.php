@@ -39,17 +39,6 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
@@ -57,11 +46,6 @@
                                     {{ __('Log in') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot your password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
