@@ -1,10 +1,7 @@
 @extends('adminLte.dashboard')
 @section('content')
-<head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
 
-<h1>Dodawanie ocen</h1><br><br>
+<h1>Add grade</h1><br><br>
 
 
 
@@ -16,21 +13,21 @@
     @endforeach
     @endif
 
-    <label>Uczeń imię</label>
+    <label>Student name</label>
     <select name="row" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
- 
+
     @foreach($data as $row)
         <option value="{{$row->id}}" {{$row->id == $row->id  ? 'selected' : ''}}>{{$row->name}}</option>
     @endforeach
     </select><br><br>
 
-    <label>Ocena</label> 
-    <input type="text" name="grade" placeholder="Ocena"  class="form-control" id="exampleFormControlInput1"> 
+    <label>Grade</label>
+    <input type="text" name="grade" placeholder="Grade"  class="form-control" id="exampleFormControlInput1">
     </input><br>
 
     <br><br>
-    <label>Komentarz</label> 
-    <textarea type="text" name="comment" placeholder="Komentarz" class="form-control" id="exampleFormControlTextarea1" rows="3"> 
+    <label>Comment</label>
+    <textarea type="text" name="comment" placeholder="Comment" class="form-control" id="exampleFormControlTextarea1" rows="3">
 
     </textarea><br><br>
     <input type = "submit"  class="btn btn-secondary">

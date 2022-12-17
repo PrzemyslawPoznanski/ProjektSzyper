@@ -1,14 +1,14 @@
 @extends('adminLte.dashboard')
 @section('content')
-<h1>Historia zmian ocen</h1>
-<table class="table">
+<h1>Grade change history</h1>
+<table class="table table-bordered">
 <thead>
     <tr>
-    <th scope="col">Ocena pierwsza</th>
-    <th scope="col">Ocena zmieniona</th>
-    <th scope="col">Komentarz</th>
-    <th scope="col">Data zmiany</th>
-    <th scope="col">Data orginału</th>
+    <th scope="col">Grade before change</th>
+    <th scope="col">Grade after change</th>
+    <th scope="col">Comment</th>
+    <th scope="col">Date of change</th>
+    <th scope="col">Original grade date</th>
     </tr>
 </thead>
 <tbody>
@@ -22,7 +22,7 @@
         <td>{{$row->created_at}}</td>
     </tr>
 
-    
+
     @endforeach
 
 </tbody>

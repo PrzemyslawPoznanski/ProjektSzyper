@@ -57,14 +57,13 @@ Route::get('grade_history',[App\Http\Controllers\ViewGradeHistoryController::cla
 Route::view('add_user','add_user');
 Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);
 
-//Crud
+Route::resource('users', UserController::class);
+
 Route::view('user_list','user_list');
 Route::get('user_list',[App\Http\Controllers\UserController::class, 'index']);
-Route::resource('users', UserController::class);
 
 Route::view('create_user','create_user');
 Route::get('create_user',[App\Http\Controllers\UserController::class, 'create']);
-
 
 
 
