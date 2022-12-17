@@ -4,6 +4,7 @@
 <table class="table table-bordered">
 <thead>
     <tr>
+    <th scope="col">ID</th>
     <th scope="col">Student</th>
     <th scope="col">Grade</th>
     <th scope="col">Comment</th>
@@ -14,13 +15,16 @@
     </tr>
 </thead>
 <tbody>
-    @foreach($data as $row)
+    @foreach($data as $item)
     <tr>
-        <td>{{$row->name}}</td>
-        <td>{{$row->grade_value}}</td>
-        <td>{{$row->comment}}</td>
-        <td>{{$row->created_at}}</td>
-        <td><a class="btn btn-secondary" href={{"edit/".$row['id']}}>Edit</a></td>
+        <td>{{$item->id_of_grade}}</td>
+        <td>{{$item->name}}</td>
+        <td>{{$item->grade_value}}</td>
+        <td>{{$item->comment}}</td>
+        <td>{{$item->created_at}}</td>
+        @if($user = Auth::user()->role=='admin' or $user = Auth::user()->role=='teacher')
+        <td><a class="btn btn-secondary" href={{"edit/".$item['id_of_grade']}}>Edit</a></td>
+        @endif
     </tr>
 
     @endforeach

@@ -24,7 +24,7 @@ return new class extends Migration
         });
 
         Schema::create('grades', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_of_grade');
             $table->string('grade_value');
             $table->string('id_subject');
             $table->string('id_user');

@@ -31,25 +31,24 @@ class ViewGradesController extends Controller
         }
     }
 
-    public function editGrade($id){
+    public function showData($id_of_grade){
         
-        $data = Grades::find($id);
-        return view('edit_grades',['data'=>$data]);
+        return Grades::find($id_of_grade);
+        // return view('edit_grades',['data'=>$data]);
     }
     public function update(Request $request){
-        //dodanie oceny z grades do grade_change
-        $grade = new Grade_change;
-        $grade ->id_grade=$request->id_grade=$request->id;
-        $grade ->previous_grade=$request->previous_grade=$request->grade_value;
-        $grade ->save();
+        // //dodanie oceny z grades do grade_change
+        // $grade = new Grade_change;
+        // $grade ->id_grade=$request->id_grade=$request->id_of_grade;
+        // $grade ->previous_grade=$request->previous_grade=$request->grade_value;
+        // $grade ->save();
 
-        //update tabeli grades
-        $data=Grades::find($request->id);
-        //$data->name=$request->name;
-        $data->grade_value=$request->grade_value;
-        $data->comment=$request->comment;
-        $data->save();
-        return redirect('/');
+        // // //update tabeli grades
+        // $data=Grades::find($request->id_of_grade);
+        // $data->grade_value=$request->grade_value;
+        // $data->comment=$request->comment;
+        // $data->save();
+        // return redirect('/');
     }
 
 

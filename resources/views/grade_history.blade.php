@@ -4,6 +4,7 @@
 <table class="table table-bordered">
 <thead>
     <tr>
+    <th scope="col">User</th>
     <th scope="col">Grade before change</th>
     <th scope="col">Grade after change</th>
     <th scope="col">Comment</th>
@@ -15,6 +16,7 @@
 
     @foreach($data as $row)
     <tr>
+        <td>{{$row->name}}</td>
         <td>{{$row->previous_grade}}</td>
         <td>{{$row->grade_value}}</td>
         <td>{{$row->comment}}</td>
