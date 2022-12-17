@@ -12,9 +12,6 @@
             <div class="pull-left">
                 <h2>Edit User</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-secondary 	fas fa-chevron-left"  href="{{ route('users.index') }}"> Back</a>
-            </div>
         </div>
     </div>
 
@@ -63,7 +60,9 @@
                     </select>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-left">
+
+                <a class="btn btn-secondary 	fas fa-chevron-left"  href="{{ route('users.index') }}"> Back</a>
                 <button type="submit" class="btn btn-secondary">Submit</button>
             </div>
         </div>

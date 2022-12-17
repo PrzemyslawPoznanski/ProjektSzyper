@@ -69,7 +69,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a class="brand-link">
-      <span href="#" class="brand-text font-weight-light">Role: {{$user = Auth::user()->role;}}</span>
+      <span href="#" class="brand-text font-weight-light">{{$user = Auth::user()->role;}}</span>
     </a>
 
     <!-- Sidebar -->

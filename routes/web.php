@@ -38,7 +38,7 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('lo
 
  //addgrades
 Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index']);
-Route::view('add_grade','add_grades')->middleware('can:isAdmin, isTeacher, isStudent');
+Route::view('add_grade','add_grades')->middleware('can:isAdmin, isTeacher');
 Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade']);
 
 //viewgrades
@@ -54,15 +54,15 @@ Route::post('edit',[App\Http\Controllers\ViewGradesController::class, 'update'])
 Route::get('grade_history',[App\Http\Controllers\ViewGradeHistoryController::class, 'joinHistory']);
 
 //add user
-Route::view('add_user','add_user')->middleware('can:isAdmin, isTeacher, isStudent');
+Route::view('add_user','add_user')->middleware('can:isAdmin');
 Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);
 
 Route::resource('users', UserController::class);
 
-Route::view('user_list','user_list')->middleware('can:isAdmin, isTeacher, isStudent');
+Route::view('user_list','user_list')->middleware('can:isAdmin, isTeacher');
 Route::get('user_list',[App\Http\Controllers\UserController::class, 'index']);
 
-Route::view('create_user','create_user')->middleware('can:isAdmin, isTeacher, isStudent');
+Route::view('create_user','create_user')->middleware('can:isAdmin');
 Route::get('create_user',[App\Http\Controllers\UserController::class, 'create']);
 
 

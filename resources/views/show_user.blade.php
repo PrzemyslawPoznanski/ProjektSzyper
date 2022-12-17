@@ -11,9 +11,7 @@
             <div class="pull-left">
                 <h2> Show User</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-secondary" href="{{ route('users.index') }}"> Back</a>
-            </div>
+
         </div>
     </div>
 
@@ -36,6 +34,8 @@
                 {{ $user->role }}
             </div>
         </div>
-
+        <div class="pull-left">
+            <a class="btn btn-secondary" href="{{ route('users.index') }}"> Back</a>
+        </div>
     </div>
 @endsection

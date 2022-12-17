@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Hash;
 
 return new class extends Migration
 {
@@ -17,7 +18,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->nullable();
             $table->timestamps();
@@ -45,6 +45,8 @@ return new class extends Migration
             $table->timestamp('history_created_at',0)->nullable();
             $table->timestamp('history_updated_at',0)->nullable();
         });
+
+        $this->initializeFirstUsers();
     }
 
     /**
@@ -58,5 +60,28 @@ return new class extends Migration
         Schema::dropIfExists('grades');
         Schema::dropIfExists('subjects');
         Schema::dropIfExists('grade_change');
+    }
+
+    public function initializeFirstUsers()
+    {
+        DB::table('users')->insert([
+            [   'id' => '1',
+                'name' => 'Adam Administratorski',
+                'email' => 'admin@a.a',
+                'password' => Hash::make('admin'),
+                'role' => 'admin'],
+            [
+                'id' => '1',
+                'name' => 'Tomek Teacherowski',
+                'email' => 'teacher@t.t',
+                'password' => Hash::make('teacher'),
+                'role' => 'teacher'],
+            [
+                'id' => '1',
+                'name' => 'Staszek Studentowski',
+                'email' => 'student@s.s',
+                'password' => Hash::make('student'),
+                'role' => 'student']]
+        );
     }
 };
