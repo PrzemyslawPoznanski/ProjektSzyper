@@ -42,7 +42,8 @@ return new class extends Migration
             $table->id();
             $table->string('id_grade');
             $table->string('previous_grade');
-            $table->timestamps();
+            $table->timestamp('history_created_at',0)->nullable();
+            $table->timestamp('history_updated_at',0)->nullable();
         });
     }
 

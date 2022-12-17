@@ -48,6 +48,9 @@ Route::view('view','view_grades');
 Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']);
 Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']);
 
+//grade history
+Route::get('grade_history',[App\Http\Controllers\ViewGradeHistoryController::class, 'joinHistory']);
+
 //add user
 Route::view('add_user','add_user');
 Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser']);

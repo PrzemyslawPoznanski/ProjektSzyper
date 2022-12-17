@@ -7,7 +7,7 @@
     <th scope="col">Uczeń</th>
     <th scope="col">Ocena</th>
     <th scope="col">Komentarz</th>
-    <th scope="col">Data</th>
+    <th scope="col">Data utworzenia</th>
     @if($user = Auth::user()->role=='admin' or $user = Auth::user()->role=='teacher')
     <th  scope="col">Edit</th>
     @endif

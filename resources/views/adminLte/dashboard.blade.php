@@ -133,7 +133,7 @@
           @endif
           @if($user = Auth::user()->role=='admin' OR $user = Auth::user()->role=='student' OR $user = Auth::user()->role=='teacher')
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="grade_history" class="nav-link">
               <i class="nav-icon fas fa fa-history"></i>
               <p>
                 GRADE HISTORY
