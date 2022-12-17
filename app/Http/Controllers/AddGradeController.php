@@ -27,7 +27,7 @@ class AddGradeController extends Controller
 
 
         $grade = new Grades;
-        $grade ->id_subject=$request->id_subject=='1';
+        $grade ->id_subject=$request->id_subject='1';
         $grade ->id_user=$request->row;
         $grade ->grade_value=$request->grade;
         $grade ->comment=$request->comment;
