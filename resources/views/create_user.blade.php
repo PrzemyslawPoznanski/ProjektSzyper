@@ -12,7 +12,7 @@
                 <h2>Add New User</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                <a class="btn btn-primary" href="user_list"> Back</a>
             </div>
         </div>
     </div>
@@ -28,32 +28,35 @@
         </div>
     @endif
 
-    <form action="{{ route('users.store') }}" method="POST">
+    <form method="POST" action="add_user">
         @csrf
+        @if($errors->any())
+            @foreach ($errors->all() as $err)
+                <li class="alert alert-danger" role="alert">{{$err}}</li>
+            @endforeach
+        @endif
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" class="form-control" placeholder="Name">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>password:</strong>
-                    <input type="text" name="password" class="form-control" placeholder="Password">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>email:</strong>
-                    <textarea class="form-control" style="height:150px" name="email" placeholder="Email"></textarea>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
+        <label>Imię</label>
+        <input type="text" name="name" placeholder="Imię"  class="form-control" id="inputName">
+        <br>
 
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Email"  class="form-control" id="inputEmail">
+        <br>
+
+        <label>Hasło</label>
+        <input type="text" name="password" placeholder="Hasło"  class="form-control" id="inputPassword">
+        <br>
+
+        <label>Rola użytkownika</label>
+        <select name="role" class="form-control" id="inputRole">
+            <option value="" disabled selected>Wybierz rolę</option>
+            <option value="admin">Admin</option>
+            <option value="teacher">Nauczyciel</option>
+            <option value="student">Uczeń</option>
+        </select>
+        <br>
+
+        <input type = "submit"  class="btn btn-secondary">
     </form>
 @endsection

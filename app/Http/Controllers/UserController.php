@@ -39,13 +39,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+            'role' => 'required',
         ]);
 
         User::create($request->all());
 
-        return redirect('/');
+        return redirect('user_list');
     }
 
     /**
@@ -56,7 +58,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('user.show',compact('user'));
+        return view('show_user',compact('user'));
     }
 
     /**
@@ -67,7 +69,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user.edit',compact('user'));
+        return view('edit_user',compact('user'));
     }
 
     /**
@@ -86,8 +88,7 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('users.index')
-            ->with('success','User updated successfully');
+        return redirect('user_list');
     }
 
     /**
@@ -100,7 +101,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('user.index')
-            ->with('success','User deleted successfully');
+        return redirect('user_list');
     }
 }

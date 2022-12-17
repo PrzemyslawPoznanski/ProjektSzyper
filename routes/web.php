@@ -55,8 +55,12 @@ Route::post('add_user',[App\Http\Controllers\AddUserController::class, 'addUser'
 //Crud
 Route::view('user_list','user_list');
 Route::get('user_list',[App\Http\Controllers\UserController::class, 'index']);
+Route::resource('users', UserController::class);
 
 Route::view('create_user','create_user');
 Route::get('create_user',[App\Http\Controllers\UserController::class, 'create']);
 
-Route::resource('users', UserController::class);
+
+
+
+
