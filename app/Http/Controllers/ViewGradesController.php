@@ -28,5 +28,22 @@ class ViewGradesController extends Controller
         }
     }
 
+    public function editGrade($id){
+        
+        $data = Grades::find($id);
+        return view('edit_grades',['data'=>$data]);
+    }
+    public function update(Request $request){
+
+        $data=Grades::find($request->id);
+        //$data->name=$request->name;
+        $data->grade_value=$request->grade_value;
+        $data->comment=$request->comment;
+        $data->save();
+        return redirect('/');
+
+    }
+
+
 
 }

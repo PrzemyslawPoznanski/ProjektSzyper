@@ -1,6 +1,6 @@
 @extends('adminLte.dashboard')
 @section('content')
-<h1>Tu powinny się wyświelić oceny</h1>
+<h1>Tu powinny się wyświelić aktualne oceny</h1>
 <table class="table">
 <thead>
     <tr>
@@ -20,7 +20,7 @@
         <td>{{$row->grade_value}}</td>
         <td>{{$row->comment}}</td>
         <td>{{$row->created_at}}</td>
-        <td><a class="btn btn-secondary">edytuj</a></td>
+        <td><a class="btn btn-secondary" href={{"edit/".$row['id']}}>edytuj</a></td>
     </tr>
     
     @endforeach

@@ -1,6 +1,6 @@
 @extends('adminLte.dashboard')
 @section('content')
-<h1>Tu powinny się historia oceny</h1>
+<h1>Historia zmian ocen</h1>
 <table class="table">
 <thead>
     <tr>
@@ -12,6 +12,7 @@
     </tr>
 </thead>
 <tbody>
+
     @foreach($data as $row)
     <tr>
         <td>{{$row->previous_grade}}</td>
@@ -20,8 +21,10 @@
         <td>{{$row->history_created_at}}</td>
         <td>{{$row->created_at}}</td>
     </tr>
+
     
     @endforeach
+
 </tbody>
 </table>
 @endsection

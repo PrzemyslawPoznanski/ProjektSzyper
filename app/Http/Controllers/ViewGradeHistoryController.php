@@ -17,7 +17,7 @@ class ViewGradeHistoryController extends Controller
         ->join('users','users.id','=','grades.id_user')
         ->get(['grades.grade_value','grade_change.previous_grade', 'grades.comment', 'grade_change.history_created_at', 'grades.created_at'])
         -where('users.id','=', $user = Auth::user()->id);
-        return view('grade_history', compact('data'));
+        return view('grade_history', compact('previous_grade','data'));
 
 
         }

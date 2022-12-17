@@ -48,6 +48,8 @@ Route::view('view','view_grades');
 Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']);
 Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']);
 
+Route::get('edit/{id}',[App\Http\Controllers\ViewGradesController::class, 'editGrade']);
+Route::post('edit',[App\Http\Controllers\ViewGradesController::class, 'update']);
 //grade history
 Route::get('grade_history',[App\Http\Controllers\ViewGradeHistoryController::class, 'joinHistory']);
 
