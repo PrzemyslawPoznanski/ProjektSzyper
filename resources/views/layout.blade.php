@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 8 CRUD Application </title>
+    <title>Show user</title>
 </head>
 <body>
 

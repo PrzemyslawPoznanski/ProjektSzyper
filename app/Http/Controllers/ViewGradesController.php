@@ -11,7 +11,7 @@ class ViewGradesController extends Controller
 
     public function joinTables(){
         $data = Users::join('grades','grades.id_user','=','users.id')
-        ->get(['users.name', 'grades.grade_value', 'grades.comment']);
+        ->get(['users.name', 'grades.grade_value', 'grades.comment', 'grades.created_at']);
         return view('view_grades', compact('data'));
     }
 

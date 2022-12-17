@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -40,7 +41,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255',  'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'role' => 'required',
         ]);
@@ -82,9 +83,25 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'name' => ['required', 'string', 'max:255'],
+
+            'role' => 'required',
+
         ]);
+
+        $user ->name=$request->name;
+        if($request->email != "")
+        {
+            $user ->email=$request->email;
+        }
+        if($request-> password != "")
+        {
+            $user ->password=Hash::make($request-> password);
+        }
+        $user ->role=$request->role;
+
+        $user ->save();
+        return redirect('/');
 
         $user->update($request->all());
 

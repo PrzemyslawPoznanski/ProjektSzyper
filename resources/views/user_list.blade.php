@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Laravel 8 CRUD Example f</h2>
+                
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="create_user"> Create New user</a>

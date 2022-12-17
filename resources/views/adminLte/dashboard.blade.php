@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -160,6 +161,8 @@
     <!-- /.content-header -->
 <div class="container">
   @yield('content')
+  
+  
 </div>
     <!-- Main content -->
 

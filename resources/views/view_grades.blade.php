@@ -7,6 +7,7 @@
     <th scope="col">Uczeń</th>
     <th scope="col">Ocena</th>
     <th scope="col">Komentarz</th>
+    <th scope="col">Data</th>
     @if($user = Auth::user()->role=='admin' or $user = Auth::user()->role=='teacher')
     <th  scope="col">Edit</th>
     @endif
@@ -18,6 +19,7 @@
         <td>{{$row->name}}</td>
         <td>{{$row->grade_value}}</td>
         <td>{{$row->comment}}</td>
+        <td>{{$row->created_at}}</td>
         <td><a class="btn btn-secondary">edytuj</a></td>
     </tr>
     

@@ -30,5 +30,12 @@
                 {{ $user->email }}
             </div>
         </div>
+        <div class="form-control">
+            <div class="form-group">
+                <strong>Role:</strong>
+                {{ $user->role }}
+            </div>
+        </div>
+
     </div>
 @endsection
