@@ -71,13 +71,13 @@ return new class extends Migration
                 'password' => Hash::make('admin'),
                 'role' => 'admin'],
             [
-                'id' => '1',
+                'id' => '2',
                 'name' => 'Tomek Teacherowski',
                 'email' => 'teacher@t.t',
                 'password' => Hash::make('teacher'),
                 'role' => 'teacher'],
             [
-                'id' => '1',
+                'id' => '3',
                 'name' => 'Staszek Studentowski',
                 'email' => 'student@s.s',
                 'password' => Hash::make('student'),
