@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddGradeController;
 use App\Http\Controllers\EditGradeController;
 use App\Http\Controllers\ViewGradeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,9 +41,16 @@ Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index'
 Route::view('add_grade','add_grades');
 Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade']); 
 
+//editgrade
+
+
+//historygrades
+Route::view('history','history');
+Route::get('history',[App\Http\Controllers\GradeHistoryController::class, 'viewHistory']);
+ 
+
 //viewgrades
 Route::get('view_grades',[App\Http\Controllers\ViewGradesController::class, 'joinTables']);
-
 Route::view('view','view_grades');
 Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']); 
 Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']); 

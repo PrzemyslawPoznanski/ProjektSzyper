@@ -8,7 +8,7 @@
     <th scope="col">Ocena</th>
     <th scope="col">Komentarz</th>
     @if($user = Auth::user()->role=='admin' or $user = Auth::user()->role=='teacher')
-    <th  scope="col">Edit</th>
+    <th  scope="col">Zobacz historie oceny</th>
     @endif
     </tr>
 </thead>
@@ -19,7 +19,7 @@
         <td>{{$row->grade_value}}</td>
         <td>{{$row->comment}}</td>
         @if($user = Auth::user()->role=='admin' or $user = Auth::user()->role=='teacher')
-        <td><a class="btn btn-secondary" href="edit_grades">edytuj</a></td>
+        <td><a class="btn btn-secondary">Historia</a></td>
         @endif
     </tr>
     
