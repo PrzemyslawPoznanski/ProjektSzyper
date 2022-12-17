@@ -1,4 +1,4 @@
-@extends('adminLte.dashboard')
+@extends('layout')
 
 @section('content')
 
