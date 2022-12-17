@@ -56,10 +56,10 @@
                 <div class="form-group">
                     <strong>Role:</strong>
                     <select placeholder="{{ $user->role }}" name="role" class="form-control" id="inputRole">
-                        <option value="" disabled selected>Wybierz rolę</option>
+                        <option value="" disabled selected>Choose role</option>
                         <option value="admin">Admin</option>
-                        <option value="teacher">Nauczyciel</option>
-                        <option value="student">Uczeń</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
                     </select>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dziennik szkolny</title>
+  <title>School system</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -69,8 +69,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span href="#" class="brand-text font-weight-light">Rola: {{$user = Auth::user()->role;}}</span>
+      <span href="#" class="brand-text font-weight-light">Role: {{$user = Auth::user()->role;}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -78,7 +77,6 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{$user = Auth::user()->name;}}
@@ -96,7 +94,7 @@
             <a href="add_user" class="nav-link">
               <i class="nav-icon fas fa fa-user-plus"></i>
               <p>
-                USER ADD
+                ADD USER
               </p>
             </a>
           </li>
@@ -106,7 +104,7 @@
             <a href="user_list" class="nav-link">
               <i class="nav-icon fas fa-user-edit"></i>
               <p>
-                USER EDIT
+                USER LIST
               </p>
             </a>
           </li>
@@ -116,7 +114,7 @@
             <a href="view_grades" class="nav-link">
               <i class="nav-icon fas fa-poll-h"></i>
               <p>
-                GRADES
+                GRADES LIST
               </p>
             </a>
           </li>
@@ -126,7 +124,7 @@
             <a href="add_grades" class="nav-link">
               <i class="nav-icon fas fa-plus-square"></i>
               <p>
-                ADD GRADES
+                ADD GRADE
               </p>
             </a>
           </li>
@@ -161,8 +159,8 @@
     <!-- /.content-header -->
 <div class="container">
   @yield('content')
-  
-  
+
+
 </div>
     <!-- Main content -->
 
