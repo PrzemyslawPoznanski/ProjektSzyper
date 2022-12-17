@@ -8,9 +8,8 @@
 <form action="/edit" method="POST">
 @csrf
     <input type="hidden" name="id" value="{{$data['id']}}" class="form-control" id="exampleFormControlInput1"><br><br>
-    <input type="hidden" name="name" value="{{$data['name']}}" class="form-control" id="exampleFormControlInput1"><br><br>
     <input type="text" name="grade_value" value="{{$data['grade_value']}}" class="form-control" id="exampleFormControlInput1"><br><br>
     <input type="text" name="comment" value="{{$data['comment']}}" class="form-control" id="exampleFormControlInput1"><br><br>
-    <button>Aktualizuj</button>
+    <button>Aktualizujeee</button>
 </form>
 @endsection
