@@ -10,7 +10,9 @@
 <form action="/edit" method="POST">
 @csrf
     <input type="hidden" name="id" value="{{$data['id']}}" class="form-control" id="exampleFormControlInput1"><br><br>
+    <label>Grade</label>
     <input type="text" name="grade_value" value="{{$data['grade_value']}}" class="form-control" id="exampleFormControlInput1"><br><br>
+    <label>Comment</label>
     <input type="text" name="comment" value="{{$data['comment']}}" class="form-control" id="exampleFormControlInput1"><br><br>
     <div class="pull-right">
         <a class="btn btn-secondary 	fas fa-chevron-left"  href="javascript:history.back()"> Back</a>

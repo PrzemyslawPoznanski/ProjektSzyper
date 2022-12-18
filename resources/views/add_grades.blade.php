@@ -1,7 +1,7 @@
 @extends('adminLte.dashboard')
 @section('content')
 
-<h1>Add grade</h1><br><br>
+<h1>Add grade</h1><br>
 
 
 
@@ -19,13 +19,22 @@
     @foreach($data as $row)
         <option value="{{$row->id}}" {{$row->id == $row->id  ? 'selected' : ''}}>{{$row->name}}</option>
     @endforeach
-    </select><br><br>
+    </select><br>
 
     <label>Grade</label>
     <input type="text" name="grade" placeholder="Grade"  class="form-control" id="exampleFormControlInput1">
     </input><br>
 
-    <br><br>
+    <label>Subject</label>
+    <select name="subjectName" class="form-control" id="inputSubject">
+        <option value="" disabled selected>Choose subject</option>
+        <option value="Maths">Maths</option>
+        <option value="History">History</option>
+        <option value="Physics">Physics</option>
+    </select>
+    </input>
+
+    <br>
     <label>Comment</label>
     <textarea type="text" name="comment" placeholder="Comment" class="form-control" id="exampleFormControlTextarea1" rows="3">
 

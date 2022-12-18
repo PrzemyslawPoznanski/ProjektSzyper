@@ -1,7 +1,7 @@
 @extends('adminLte.dashboard')
 @section('content')
 
-    <h1>Add user</h1><br><br>
+    <h1>Add new user</h1><br>
 
 
 
@@ -34,7 +34,7 @@
         </select>
         <br>
 
-        <input type = "submit"  class="btn btn-secondary">
+        <input type = "submit"   class="btn btn-secondary">
     </form>
 
 @endsection

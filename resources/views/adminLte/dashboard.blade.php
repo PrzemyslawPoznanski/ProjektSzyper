@@ -89,7 +89,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               @if($user = Auth::user()->role=='admin' OR $user = Auth::user()->role=='teacher')
+               @if($user = Auth::user()->role=='admin')
           <li class="nav-item">
             <a href="add_user" class="nav-link">
               <i class="nav-icon fas fa fa-user-plus"></i>
@@ -99,7 +99,7 @@
             </a>
           </li>
               @endif
-              @if($user = Auth::user()->role=='admin' OR $user = Auth::user()->role=='teacher')
+              @if($user = Auth::user()->role=='admin')
           <li class="nav-item">
             <a href="user_list" class="nav-link">
               <i class="nav-icon fas fa-user-edit"></i>

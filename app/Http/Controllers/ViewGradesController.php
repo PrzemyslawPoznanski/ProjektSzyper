@@ -17,22 +17,22 @@ class ViewGradesController extends Controller
             $data = Users::join('grades','grades.id_user','=','users.id')
             ->where('users.id', '=', $user = Auth::user()->id)
             ->orderBy('users.id', 'DESC')
-            ->get(['users.id', 'users.name', 'grades.grade_value', 'grades.comment', 'grades.created_at']);
-    
+            ->get(['users.id', 'users.name', 'grades.grade_value', 'grades.subject', 'grades.comment', 'grades.updated_at']);
+
             return view('view_grades', compact('data'));
         }
         else
         {
             $data = Users::join('grades','grades.id_user','=','users.id')
             ->orderBy('users.id', 'DESC')
-            ->get(['users.id', 'users.name', 'grades.grade_value', 'grades.comment', 'grades.created_at']);
+            ->get(['users.id', 'users.name', 'grades.grade_value', 'grades.subject', 'grades.comment', 'grades.updated_at']);
 
             return view('view_grades', compact('data'));
         }
     }
 
     public function editGrade($id){
-        
+
         $data = Grades::find($id);
         return view('edit_grades',['data'=>$data]);
     }

@@ -7,11 +7,14 @@
             <div class="pull-left">
 
             </div>
-            <div class="pull-right">
-                <a class="btn btn-secondary" href="create_user"> Create New user</a>
-            </div>
+
+            @if($user = Auth::user()->role=='admin')
+                <div class="pull-right">
+                    <a class="btn btn-secondary" href="create_user"> Create New user</a>
+                </div>
+            @endif
         </div>
-    </div>
+    </div><br>
 
     <table class="table table-bordered">
         <tr>
@@ -30,7 +33,7 @@
                 <td>
                     <form action="{{ route('users.destroy',$user->id) }}" method="POST">
 
-                        <a class="btn btn-secondary" href="{{ route('users.show',$user->id) }}">Show</a>
+                        <a class="btn btn-secondary" href="{{ route('users.show',$user->id) }}">Details</a>
 
                         <a class="btn btn-secondary" href="{{ route('users.edit',$user->id) }}">Edit</a>
 
