@@ -18,7 +18,7 @@ class ViewGradesController extends Controller
             ->where('users.id', '=', $user = Auth::user()->id)
             ->orderBy('users.id', 'DESC')
             ->get(['users.id', 'users.name', 'grades.grade_value', 'grades.comment', 'grades.created_at']);
-    
+
             return view('view_grades', compact('data'));
         }
         else
@@ -32,7 +32,7 @@ class ViewGradesController extends Controller
     }
 
     public function editGrade($id){
-        
+
         $data = Grades::find($id);
         return view('edit_grades',['data'=>$data]);
     }
