@@ -44,22 +44,22 @@ Route::resource('users', UserController::class)->middleware('can:isAdmin');
 Route::view('user_list','user_list')->middleware('can:isAdmin');
 Route::get('user_list',[App\Http\Controllers\UserController::class, 'index'])->middleware('can:isAdmin');
 
-Route::view('create_user','create_user')->middleware('can:isAdmin', 'can:isTeacher');
-Route::get('create_user',[App\Http\Controllers\UserController::class, 'create'])->middleware('can:isAdmin', 'can:isTeacher');
+Route::view('create_user','create_user')->middleware('can:isAdmin');
+Route::get('create_user',[App\Http\Controllers\UserController::class, 'create'])->middleware('can:isAdmin');
 
-Route::view('view','view_grades')->middleware(['can:isAdmin, isTeacher, isStudent']);
-Route::get('view_grades',[App\Http\Controllers\ViewGradesController::class, 'joinTables']);
-Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade']);
-Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables']);
+Route::view('view','view_grades')->middleware(['can:isUser']);
+Route::get('view_grades',[App\Http\Controllers\ViewGradesController::class, 'joinTables'])->middleware(['can:isUser']);
+Route::post('view',[App\Http\Controllers\AddGradesController::class, 'viewGrade'])->middleware(['can:isUser']);
+Route::get('view',[App\Http\Controllers\AddGradesController::class, 'joinTables'])->middleware(['can:isUser']);
 
-Route::view('add_grade','add_grades')->middleware(['can:isAdmin, isTeacher']);
-Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index'])->middleware(['can:isAdmin, isTeacher']);
-Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade'])->middleware(['can:isAdmin, isTeacher']);
+Route::view('add_grade','add_grades')->middleware(['can:isNotStudent']);
+Route::get('add_grades',[App\Http\Controllers\AddGradeController::class, 'index'])->middleware(['can:isNotStudent']);
+Route::post('add_grade',[App\Http\Controllers\AddGradeController::class, 'addGrade'])->middleware(['can:isNotStudent']);
 
-Route::get('edit/{id}',[App\Http\Controllers\ViewGradesController::class, 'editGrade'])->middleware(['can:isAdmin, isTeacher']);
-Route::post('edit',[App\Http\Controllers\ViewGradesController::class, 'update'])->middleware(['can:isAdmin, isTeacher']);
+Route::get('edit/{id}',[App\Http\Controllers\ViewGradesController::class, 'editGrade'])->middleware(['can:isNotStudent']);
+Route::post('edit',[App\Http\Controllers\ViewGradesController::class, 'update'])->middleware(['can:isNotStudent']);
 
-Route::get('grade_history',[App\Http\Controllers\ViewGradeHistoryController::class, 'joinHistory']);
+Route::get('grade_history',[App\Http\Controllers\ViewGradeHistoryController::class, 'joinHistory'])->middleware(['can:isUser']);
 
 
 
