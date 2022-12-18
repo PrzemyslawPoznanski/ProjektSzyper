@@ -4,10 +4,6 @@
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-
-            </div>
-
             @if($user = Auth::user()->role=='admin')
                 <div class="pull-right">
                     <a class="btn btn-secondary" href="create_user"> Create New user</a>
@@ -32,23 +28,15 @@
                 <td>{{ $user->role }}</td>
                 <td>
                     <form action="{{ route('users.destroy',$user->id) }}" method="POST">
-
                         <a class="btn btn-secondary" href="{{ route('users.show',$user->id) }}">Details</a>
-
                         <a class="btn btn-secondary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-
                         @csrf
                         @method('DELETE')
-
                         <button type="submit" class="btn btn-secondary">Delete</button>
                     </form>
                 </td>
             </tr>
         @endforeach
     </table>
-
     {!! $users->links() !!}
-
-
-
 @endsection

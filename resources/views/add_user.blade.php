@@ -3,8 +3,6 @@
 
     <h1>Add new user</h1><br>
 
-
-
     <form method="POST" action="add_user">
         @csrf
         @if($errors->any())
