@@ -4,6 +4,7 @@
 <table class="table table-bordered">
 <thead>
     <tr>
+    <th scope="col">ID</th>
     <th scope="col">Student</th>
     <th scope="col">Grade</th>
     <th scope="col">Comment</th>
@@ -16,7 +17,8 @@
 <tbody>
     @foreach($data as $row)
     <tr>
-        <td>{{$row->name}}</td>
+    <td>{{$row['id']}}</td>
+        <td>{{$row['name']}}</td>
         <td>{{$row->grade_value}}</td>
         <td>{{$row->comment}}</td>
         <td>{{$row->created_at}}</td>
